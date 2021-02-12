@@ -1,0 +1,42 @@
+#include<stdio.h>
+#include<stdlib.h>
+
+long max(long a, long b) {
+    return a>b? a:b;
+}
+
+void solve() {
+    long n,k;
+    scanf("%ld %ld",&n,&k);
+    long arr[n], rem[k];
+    for(long i=0;i<n;i++) {
+        scanf("%ld",&arr[i]);
+    }
+    for(long i=0;i<k;i++) {
+        rem[i] = 0;
+    }
+    for(long i=0;i<n;i++) {
+        rem[arr[i]%k]++;
+    }
+    // for(long i=0;i<k;i++) {
+    //   printf("%ld ",rem[i]);
+    // }
+    // printf("\n");
+    long count=0;
+    if(rem[0]) {
+        count++;
+    }
+    for(long i=1;i<(k+1)/2;i++) {
+        long tmp = max(rem[i],rem[k-i]);
+        count += tmp;
+    }
+    if(k%2 == 0) {
+        count++;
+    }
+    printf("%ld\n",count);
+}
+
+int main() {
+    solve();   
+    return 0;
+}
