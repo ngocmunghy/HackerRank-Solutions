@@ -3,12 +3,11 @@
 #include<string.h>
 
 int main() {
-    int n,count=0;
+    int i,n,count=0;
     scanf("%d",&n);
     char str[n+1];
     scanf("%s",str);
-    int i,length = strlen(str);
-    for(i=0;i<length-2;) {
+    for(i=0;i<n-2;) {
         if(str[i] == '0' && str[i+1] == '1' && str[i+2] == '0') {
             count++;
             i += 3;
