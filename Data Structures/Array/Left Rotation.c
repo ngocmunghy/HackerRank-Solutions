@@ -7,17 +7,9 @@ int main() {
     for(i=0;i<n;i++) {
         scanf("%d",&a[i]);
     }
-    for(j=0;j<d;j++) {
-            tmp = a[0];
-            i=0;
-            while (i< n-1){
-                a[i] = a[i + 1];
-                i++;
-            } 
-            a[i] = tmp;
-    }
     for(i=0;i<n;i++) {
-        printf("%d ",a[i]);
+        printf("%d ",a[(i+d)%n]);
     }
     return 0;
 }
+
