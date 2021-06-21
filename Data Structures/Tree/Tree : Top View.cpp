@@ -70,8 +70,8 @@ class Node {
             }
         }
         
-        for(auto x:m) {
-            cout<< x.second<< " ";
+        for(auto x : m) {
+            cout << x.second << " ";
         }
     }
 
