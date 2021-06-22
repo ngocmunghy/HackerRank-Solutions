@@ -15,7 +15,7 @@ int main() {
         cnt[s[i] - 'a']++;
     }
     
-    for(int i = 0; i < 26; i++) {
+    for(int i = 0; i <= 26; i++) {
         if(cnt[i] == 0)
             continue;
         
